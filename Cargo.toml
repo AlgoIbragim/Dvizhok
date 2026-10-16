@@ -1,0 +1,51 @@
+[package]
+name = "lumina"
+version = "0.1.0"
+edition = "2021"
+authors = ["Lumina Engine Contributors"]
+description = "Lightweight, powerful 2D/3D game engine in Rust"
+license = "MIT OR Apache-2.0"
+
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[dependencies]
+# Core
+lumina_core = { path = "crates/core" }
+lumina_render = { path = "crates/render" }
+lumina_scene = { path = "crates/scene" }
+lumina_asset = { path = "crates/asset" }
+lumina_script = { path = "crates/script" }
+lumina_editor = { path = "crates/editor" }
+
+# Math
+glam = { version = "0.28", features = ["bytemuck", "serde"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Async
+tokio = { version = "1.35", features = ["full"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+[profile.dev]
+opt-level = 1
+debug = true
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+
+[[bin]]
+name = "editor"
+path = "src/bin/editor.rs"
+
+[[bin]]
+name = "game"
+path = "src/bin/game.rs"

@@ -1,0 +1,21 @@
+[package]
+name = "lumina_scene"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lumina_core = { path = "../core" }
+lumina_render = { path = "../render" }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"], optional = true }
+
+# Scene graph
+petgraph = "0.6"
+
+# Error handling
+thiserror = "1.0"
+
+[features]
+default = ["serde"]
+serde = ["dep:serde"]

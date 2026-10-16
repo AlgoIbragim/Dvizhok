@@ -1,0 +1,39 @@
+[package]
+name = "lumina_asset"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lumina_core = { path = "../core" }
+
+# Async
+tokio = { version = "1.35", features = ["full"] }
+
+# File watching
+notify = { version = "6.1", default-features = false, features = ["macos_kqueue"] }
+
+# Hashing
+blake3 = "1.5"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+ron = "0.8"
+
+# Path utils
+path-clean = "1.0"
+pathdiff = "0.2"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Logging
+tracing = "0.1"
+
+# Typemap
+downcast-rs = "1.2"
+
+# Concurrent
+parking_lot = "0.12"
+crossbeam = "0.8"
