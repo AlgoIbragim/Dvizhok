@@ -1,0 +1,28 @@
+[package]
+name = "lumina_core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# ECS
+hecs = "0.10"
+
+# Math
+glam = { version = "0.28", features = ["bytemuck"] }
+
+# Utilities
+parking_lot = "0.12"
+hashbrown = "0.14"
+slotmap = "1.0"
+
+# Error handling
+thiserror = "1.0"
+
+# Async
+crossbeam = "0.8"
+
+# Events
+flume = "0.11"
+
+# UUID
+uuid = { version = "1.6", features = ["v4"] }

@@ -1,0 +1,39 @@
+[package]
+name = "lumina_editor"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lumina_core = { path = "../core" }
+lumina_render = { path = "../render" }
+lumina_scene = { path = "../scene" }
+lumina_asset = { path = "../asset" }
+
+# UI - updated to be compatible with wgpu 0.20
+egui = "0.28"
+egui-wgpu = "0.30"
+egui-winit = "0.30"
+winit = { version = "0.29", features = ["rwh_06"] }
+
+# Docking
+egui_dock = "0.13"
+
+# Icons
+egui_extras = { version = "0.28", features = ["svg", "image"] }
+
+# Gizmos
+egui-gizmo = "0.18"
+
+# Async
+tokio = { version = "1.35", features = ["rt-multi-thread"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Logging
+tracing = "0.1"
